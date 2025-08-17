@@ -4,7 +4,11 @@
 // що містить квадрати кожного елементу вхідного масиву.
 // Очікуваний результат: [1, 4, 9, 16, 25].
 
-// const numbers = [1, 2, 3, 4, 5]
+// const numbers = [1, 2, 3, 4, 5];
+
+// const newArr = numbers.map(number => number ** 2);
+
+// console.log(newArr);
 
 // * ЗАВДАННЯ 2
 
@@ -14,10 +18,14 @@
 // Очікуваний результат: [1, 2, 3, 4, 5, 6, 7, 8, 9].
 
 // const data = [
-//  { id: 1, values: [1, 2, 3] },
-//  { id: 2, values: [4, 5, 6] },
-//  { id: 3, values: [7, 8, 9] },
+//   { id: 1, values: [1, 2, 3] },
+//   { id: 2, values: [4, 5, 6] },
+//   { id: 3, values: [7, 8, 9] },
 // ];
+
+// const allValues = data.flatMap(value => value.values);
+
+// console.log(allValues);
 
 // * ЗАВДАННЯ 3
 
@@ -26,10 +34,13 @@
 // Очікуваний результат: true.
 
 // const people = [
-//  { name: 'John', age: 27 },
-//  { name: 'Jane', age: 31 },
-//  { name: 'Bob', age: 19 },
+//   { name: 'John', age: 27 },
+//   { name: 'Jane', age: 31 },
+//   { name: 'Bob', age: 19 },
 // ];
+
+// const newArr = people.some(person => person.age < 20);
+// console.log(newArr);
 
 // * ЗАВДАННЯ 4
 
@@ -39,11 +50,17 @@
 
 // const numbers = [2, 4, 6, 8, 10];
 
+// const newArr = numbers.every(number => !(number % 0));
+// console.log(newArr);
+
 // * ЗАВДАННЯ 5
 
 // Знайдіть перше непарне число
 
 // const numbers = [2, 1, 6, 8, 9, 10, 12];
+
+// const firstNumber = numbers.find(number => number % 2 !== 0);
+// console.log(firstNumber);
 
 // * ЗАВДАННЯ 6
 
@@ -51,6 +68,9 @@
 // у порядку зростання. Очікуваний результат: [1, 2, 3, 4, 5].
 
 // const numbersArray = [4, 2, 5, 1, 3];
+
+// const sortedArray = numbersArray.toSorted((a, b) => a - b);
+// console.log(sortedArray);
 
 // * ЗАВДАННЯ 7
 
@@ -60,17 +80,23 @@
 
 // const stringArray = ['banana', 'orange', 'apple', 'pear'];
 
+// const sortedArray = stringArray.toSorted((a, b) => a.localeCompare(b));
+// console.log(sortedArray);
+
 // * ЗАВДАННЯ 8
 
 //  Відсортуйте масив об'єктів за віком у порядку зростання.
 // Очікуваний результат: [{name: "Bob", age: 19},
 // {name: "John", age: 27}, {name: "Jane", age: 31}].
 
-//const users = [
-//  { name: 'John', age: 27 },
-//  { name: 'Jane', age: 31 },
-//  { name: 'Bob', age: 19 },
+// const users = [
+//   { name: 'John', age: 27 },
+//   { name: 'Jane', age: 31 },
+//   { name: 'Bob', age: 19 },
 // ];
+
+// const sortedByAge = users.toSorted((a, b) => a.age - b.age);
+// console.log(sortedByAge);
 
 // * ЗАВДАННЯ 9
 
@@ -80,11 +106,14 @@
 // Очікуваний результат: [{name: "John", age: 27},
 // {name: "Jane", age: 31}]
 
-//const user = [
-//  { name: 'John', age: 27 },
-//  { name: 'Jane', age: 31 },
-//  { name: 'Bob', age: 19 },
-// ]
+// const user = [
+//   { name: 'John', age: 27 },
+//   { name: 'Jane', age: 31 },
+//   { name: 'Bob', age: 19 },
+// ];
+
+// const newArray = user.filter(value => value.age > 20);
+// console.log(newArray);
 
 // * ЗАВДАННЯ 10
 
@@ -92,6 +121,10 @@
 // Застосуйте метод для обчислення суми елементів масиву.
 
 // const numbers = [1, 2, 3, 4, 5];
+
+// const total = numbers.reduce((prevValue, number) => prevValue + number, 0);
+
+// console.log(total);
 
 // * ЗАВДАННЯ 11
 
@@ -135,11 +168,86 @@
 
 //   console.log(result); // 24
 
+// class Calculator {
+//   constructor() {
+//     this.result = 0;
+//   }
+//   number(value) {
+//     this.result = value;
+//     return this;
+//   }
+//   add(value) {
+//     this.result = this.result + value;
+//     return this;
+//   }
+//   subtract(value) {
+//     this.result = this.result - value;
+//     return this;
+//   }
+//   multiply(value) {
+//     this.result = this.result * value;
+//     return this;
+//   }
+//   divide(value) {
+//     if (this.result === 0) {
+//       return "I can't divide to 0";
+//     }
+//     this.result = this.result / value;
+//     return this;
+//   }
+
+//   getResult() {
+//     return this.result;
+//   }
+// }
+
+// const calc = new Calculator();
+
+// const result = calc
+//   .number(10) // Встановлюємо початкове значення 10
+//   .add(5) // Додаємо 5 (10 + 5 = 15)
+//   .subtract(3) // Віднімаємо 3 (15 - 3 = 12)
+//   .multiply(4) // Множимо на 4 (12 * 4 = 48)
+//   .divide(2) // Ділимо на 2 (48 / 2 = 24)
+//   .getResult(); // Отримуємо результат: 24
+
+// console.log(result);
+
 // * ЗАВДАННЯ 12
 
 // Напиши клас Client який створює об'єкт з властивостями login email.
 // Оголоси приватні властивості #login #email, доступ до яких зроби
 // через геттер та сеттер login email
+
+// class Client {
+//   #login;
+//   #email;
+//   constructor(login, email) {
+//     this.#login = login;
+//     this.#email = email;
+//   }
+
+//   get email() {
+//     return this.#email;
+//   }
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+//   get login() {
+//     return this.#login;
+//   }
+//   set login(newLogin) {
+//     this.#login = newLogin;
+//   }
+// }
+
+// const newclient = new Client('myLogin', 'myemail@com.com');
+// console.log(newclient.login);
+// newclient.login = 'newLogin';
+// console.log(newclient.login);
+// console.log(newclient.email);
+// newclient.email = 'newemail@com.com';
+// console.log(newclient.email);
 
 // * ЗАВДАННЯ 13
 
@@ -161,3 +269,126 @@
 //  - department - відділ, в якому працює співробітник.
 // Крім того, клас `Employee` має мати метод `getEmployeeDetails()`, який
 // повертає об'єкт з зарплатою співробітника та відділом, в якому він працює.
+
+// class Person {
+//   constructor(obj) {
+//     this.name = obj.name;
+//     this.age = obj.age;
+//     this.gender = obj.gender;
+//     this.email = obj.email;
+//   }
+//   getDetails() {
+//     return {
+//       name: this.name,
+//       age: this.age,
+//       gender: this.gender,
+//       email: this.email,
+//     };
+//   }
+// }
+
+// class Employee extends Person {
+//   constructor(employeer) {
+//     super(employeer);
+//     this.salary = employeer.salary;
+//     this.department = employeer.department;
+//   }
+//   getEmployeeDetails() {
+//     return {
+//       salary: this.salary,
+//       department: this.department,
+//     };
+//   }
+// }
+
+// const sara = new Employee({
+//   name: 'Sara',
+//   age: '18',
+//   gender: 'f',
+//   email: 'sara@mail.com',
+//   salary: '1850',
+//   department: 'account dep',
+// });
+
+// console.log(sara.getDetails());
+// console.log(sara.getEmployeeDetails());
+
+// * ЗАВДАННЯ 14
+
+// маємо масив об'єктів, який представляє список товарів і їх цін:
+// Завдання: Знайдіть суму вартості всіх товарів, які коштують більше 10 гривень.
+
+// const products = [
+//   { name: 'Milk', price: 20 },
+//   { name: 'Bread', price: 10 },
+//   { name: 'Eggs', price: 15 },
+// ];
+
+// const total = products
+//   .filter(product => product.price > 10)
+//   .reduce((prevValue, product) => prevValue + product.price, 0);
+
+// console.log(total);
+
+// * ЗАВДАННЯ 15
+
+// Напишіть функцію getGirlsPassports() яка поверне масив номерів паспортів дівчат.
+
+// const friends = [
+//   {
+//     passport: '03005988',
+//     name: 'Joseph Francis Tribbiani Jr',
+//     age: 32,
+//     sex: 'm',
+//   },
+//   { passport: '03005989', name: 'Chandler Muriel Bing', age: 33, sex: 'm' },
+//   { passport: '03005990', name: 'Ross Eustace Geller', age: 33, sex: 'm' },
+//   { passport: '03005991', name: 'Rachel Karen Green', age: 31, sex: 'f' },
+//   { passport: '03005992', name: 'Monica Geller', age: 31, sex: 'f' },
+//   { passport: '03005993', name: 'Phoebe Buffay', age: 34, sex: 'f' },
+// ];
+
+// function getGirlsPassports(arr) {
+//   return arr
+//     .filter(person => person.sex === 'f')
+//     .map(person => person.passport);
+// }
+
+// console.log(getGirlsPassports(friends));
+
+// * ЗАВДАННЯ 16
+
+// Маємо масив об'єктів, який представляє список замовлень:
+// Завдання:  Поверніть список товарів з усіх виконаних замовлень.
+
+// const orders = [
+//   { id: 1, products: ['Milk', 'Bread'], status: 'completed' },
+//   { id: 2, products: ['Eggs', 'Juice'], status: 'processing' },
+//   { id: 3, products: ['Pasta', 'Spices'], status: 'completed' },
+// ];
+
+// const completedOrders = orders
+//   .filter(order => order.status === 'completed')
+//   .flatMap(order => order.products);
+
+// console.log(completedOrders);
+
+// * ЗАВДАННЯ 17
+
+//Напиши клас Rectangle який створює об'єкт
+//з ​​властивостями height, width
+//і методом calculateArea() для підрахунку прлощі прямокутника.
+
+// class Rectangle {
+//   constructor(heigth, width) {
+//     this.heigth = heigth;
+//     this.width = width;
+//   }
+//   calculateArea() {
+//     return this.heigth * this.width;
+//   }
+// }
+
+// const rectangle1 = new Rectangle(10, 5);
+
+// console.log(rectangle1.calculateArea());

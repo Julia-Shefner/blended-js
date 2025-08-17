@@ -196,38 +196,38 @@
 // Якщо вказані властивості в обʼєкті відсутні (тобто метод exist повертає
 // false), методи sum і mult мають повертати рядок 'No such propeties'
 
-// const calculator = {
-//   read(a, b) {
-//     this.firstValue = a;
-//     this.secondValue = b;
-//   },
-//   exist() {
-//     if (this.firstValue && this.secondValue) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   },
+const calculator = {
+  read(a, b) {
+    this.firstValue = a;
+    this.secondValue = b;
+  },
+  exist() {
+    if (this.firstValue && this.secondValue) {
+      return true;
+    } else {
+      return false;
+    }
+  },
 
-//   sum() {
-//     if (this.exist()) {
-//       return this.firstValue + this.secondValue;
-//     } else {
-//       return 'No such propeties';
-//     }
-//   },
-//   mult() {
-//     if (this.exist()) {
-//       return this.firstValue * this.secondValue;
-//     } else {
-//       return 'No such propeties';
-//     }
-//   },
-// };
+  sum() {
+    if (this.exist()) {
+      return this.firstValue + this.secondValue;
+    } else {
+      return 'No such propeties';
+    }
+  },
+  mult() {
+    if (this.exist()) {
+      return this.firstValue * this.secondValue;
+    } else {
+      return 'No such propeties';
+    }
+  },
+};
 
-// calculator.read(1, 2);
-// console.log(calculator.sum());
-// console.log(calculator.mult());
+calculator.read(1, 2);
+console.log(calculator.sum());
+console.log(calculator.mult());
 
 // * ЗАВДАННЯ 10
 
